@@ -1,0 +1,10 @@
+streamlit
+youtube-transcript-api
+pytube
+groq
+langchain
+langchain-core
+langchain-community
+python-dotenv
+requests
+tiktoken
