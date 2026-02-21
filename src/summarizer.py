@@ -1,15 +1,15 @@
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 import os
 from dotenv import load_dotenv
 from groq import Groq
-from langchain.text_splitter import RecursiveCharacterTextSplitter
 
 
 load_dotenv()
 
 
 class YouTubeSummarizer:
-    def __init__(self, model_name: str = "mixtral-8x7b-32768"):
-        self.client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+    def __init__(self, model_name: str = "openai/gpt-oss-20b"):
+        self.client = Groq(api_key=os.getenv("groq_api_key"))
         self.model = model_name
 
         # Character-based splitting (safe + stable)
