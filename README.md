@@ -44,21 +44,28 @@ Cost-efficient API usage - Simple REST API integration
 
 ------------------------------------------------------------------------
 
-## 🏗 System Architecture
-
-User (Streamlit UI) ↓ Transcript Extraction (transcript.py) ↓ Text
-Cleaning & Chunking ↓ LLM Summarization (summarization.py) ↓ Combined
-Summary Output (based on selected type)
+ <section class="section">
+    <h2>🏗 System Architecture</h2>
+    <div class="arch">
+      <div class="arch-row"><span class="arch-num">01 </span><b>User</b>&nbsp;<small>(Streamlit UI)</small></div>
+      <div class="arch-row"><span class="arch-num">02 </span><b>Transcript Extraction</b>&nbsp;<small>transcript.py</small></div>
+      <div class="arch-row"><span class="arch-num">03 </span><b>Text Cleaning &amp; Chunking</b></div>
+      <div class="arch-row"><span class="arch-num">04 </span><b>LLM Summarization</b>&nbsp;<small>summarization.py</small></div>
+      <div class="arch-row"><span class="arch-num">05 </span><b>Combined Summary Output</b>&nbsp;<small>based on selected type</small></div>
+    </div>
+  </section>
 
 ------------------------------------------------------------------------
 
 ## 📂 Project Structure
 
-src/ ├── summarization.py \# LLM integration & chunk-based summarization
-├── transcript.py \# Transcript extraction & preprocessing
+<pre>src/
+├── summarization.py   # LLM integration &amp; chunk-based summarization
+└── transcript.py      # Transcript extraction &amp; preprocessing
 
-app.py \# Streamlit UI & main application entry requirements.txt
-.gitignore
+app.py                 # Streamlit UI &amp; main application entry
+requirements.txt
+.gitignore</pre>
 
 ------------------------------------------------------------------------
 
@@ -73,51 +80,44 @@ app.py \# Streamlit UI & main application entry requirements.txt
 
 ------------------------------------------------------------------------
 
-## 🔐 Environment Configuration
+<section class="section">
+    <h2>🔐 Environment Configuration</h2>
+    <p style="color:#555;font-size:14px;margin-bottom:0.6rem;">Create a <code>.env</code> file in the root directory:</p>
+    <pre>GROQ_API_KEY=your_groq_api_key_here</pre>
+    <p style="color:#999;font-size:13px;margin-top:0.6rem;">Ensure <code>.env</code> is included in <code>.gitignore</code>.</p>
+  </section>
 
-Create a .env file in the root directory:
-
-GROQ_API_KEY=your_groq_api_key_here
-
-Ensure .env is included in .gitignore.
-
-------------------------------------------------------------------------
-
-## 🛠 Installation Guide
-
-1.  Clone the repository
-
-git clone https://github.com/Abhisek8895/YouTube_Video_Summarizer
-cd Youtube-Video-Summarizer
-
-2.  Create virtual environment
-
-python -m venv venv
-
-Activate environment:
-
-Windows: venv\Scripts\activate
-
-Mac/Linux: source venv/bin/activate
-
-3.  Install dependencies
-
-pip install -r requirements.txt
-
-4.  Run the application
-
-streamlit run app.py
 
 ------------------------------------------------------------------------
 
-## 🎨 Supported Summary Types
+ <section class="section">
+    <h2>🛠 Installation Guide</h2>
+    <div class="step-label">1. Clone the repository</div>
+    <pre>git clone https://github.com/Abhisek8895/YouTube_Video_Summarizer
+cd Youtube_Video_Summarizer</pre>
+    <div class="step-label">2. Create virtual environment</div>
+    <pre>python -m venv venv
+# Windows:   venv\Scripts\activate
+# Mac/Linux: source venv/bin/activate</pre>
+    <div class="step-label">3. Install dependencies</div>
+    <pre>pip install -r requirements.txt</pre>
+    <div class="step-label">4. Run the application</div>
+    <pre>streamlit run app.py</pre>
+  </section>
 
--   concise → Short compressed summary\
--   bullet → Structured bullet-point summary\
--   insights → Key insights & takeaways\
--   detailed → In-depth explanatory summary\
--   blog → Blog-style rewritten article\
--   twitter → Twitter thread style content
+------------------------------------------------------------------------
+
+<section class="section">
+    <h2>🎨 Supported Summary Types</h2>
+    <div class="info-box">
+      <div class="fmt-row"><span class="fmt-key">concise</span><span class="fmt-arrow">→</span><span class="fmt-desc">Short compressed summary</span></div>
+      <div class="fmt-row"><span class="fmt-key">bullet</span><span class="fmt-arrow">→</span><span class="fmt-desc">Structured bullet-point summary</span></div>
+      <div class="fmt-row"><span class="fmt-key">insights</span><span class="fmt-arrow">→</span><span class="fmt-desc">Key insights &amp; takeaways</span></div>
+      <div class="fmt-row"><span class="fmt-key">detailed</span><span class="fmt-arrow">→</span><span class="fmt-desc">In-depth explanatory summary</span></div>
+      <div class="fmt-row"><span class="fmt-key">blog</span><span class="fmt-arrow">→</span><span class="fmt-desc">Blog-style rewritten article</span></div>
+      <div class="fmt-row"><span class="fmt-key">twitter</span><span class="fmt-arrow">→</span><span class="fmt-desc">Twitter thread style content</span></div>
+    </div>
+  </section>
 
 ------------------------------------------------------------------------
 
